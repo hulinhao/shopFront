@@ -4,6 +4,8 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+// 引入jquery
+var webpack = require('webpack')
 
 
 function resolve (dir) {
@@ -40,7 +42,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'components':'./components',
-      'lib':'./lib'
+      'lib':'./lib',
+      'static':'../../static'
     }
   },
   module: {
@@ -93,5 +96,13 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  // 插件
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery"
+    })
+  ]
 }

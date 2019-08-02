@@ -1,23 +1,22 @@
 <template>
-  <div id="app">
-     <v-hander></v-hander>
-     <v-catalogue></v-catalogue>
-     <v-main></v-main>
-     <div>
-       {{seller}}<br>
-     </div>
-     <router-view></router-view>
+  <div >
+    <router-view></router-view>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>
-import Hander from 'components/hander/hander';
-import Catalogue from 'components/catalogue/catalogue';
-import Main from 'components/main/main';
+import Search from 'components/search';
+import Footer from 'components/footer';
 export default {
     data(){
         return {
-            seller:''
         };
+    },
+    computed: {
+      username () {
+        // 我们很快就会看到 `params` 是什么
+        return this.$route.params.username;
+      }
     },
     created() {
             this.$http.get(this.$store.state.api.index, { params : { type : 2 } }).then((response) => {
@@ -25,11 +24,16 @@ export default {
         });
     },
     components:{
-       'v-hander' : Hander,
-       'v-catalogue' : Catalogue,
-       'v-main' : Main
+       'v-search' : Search,
+       'v-footer' : Footer
     }
 };
 </script>
 <style>
+*{
+  font-family: cursive;
+}
+#app{
+  background-color:#FFFFFF;
+}
 </style>
