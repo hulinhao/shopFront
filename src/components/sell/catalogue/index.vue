@@ -18,8 +18,8 @@ import $ from 'jquery';
         },
        created() {
             this.$http.get(this.$store.state.api.catalog).then((response) => {
-            this.catalog = $.parseJSON(response.bodyText).catalog;
-           });
+                this.catalog = $.parseJSON(response.bodyText).catalog;
+              });
         },
        computed : {
             // 根据目录的个数 设置目录的宽度

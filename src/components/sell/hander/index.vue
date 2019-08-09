@@ -45,6 +45,5 @@
 .item{
     height:100px;
     margin-top:29px;
-    clear:both;
 }
 </style>

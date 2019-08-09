@@ -1,9 +1,13 @@
 <template>
-    <div class="sell">
-        <v-search></v-search>
-        <v-hander></v-hander>
-        <v-catalogue></v-catalogue>
+    <div class="sell" id = 'sell'>
+       <!-- 这个div用于区分主题和上面 -->
+       <div id = "separateDiv">
+         <v-search></v-search>
+         <v-hander></v-hander>
+         <v-catalogue></v-catalogue>
+       </div>
         <router-view></router-view>
+        <div class="footHid"></div>
     </div>
 </template>
 <script>
@@ -22,5 +26,11 @@ export default{
 </script>
 <style>
 .sell{
+}
+.footHid{
+    height:25px;
+}
+#separateDiv{
+  border:1px solid red;
 }
 </style>

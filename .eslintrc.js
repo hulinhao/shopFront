@@ -40,6 +40,14 @@ module.exports = {
     //注释检测--关闭
     "ignoreEOLComments":0,
     "omitLastInOneLineBlock":0,
-    "beforeStatementContinuationChars":0
+    "beforeStatementContinuationChars":0,
+    "no-eval":0,
+    //注释前有空格验证
+    "spaced-comment":0,
+    //字符串 单引号校验
+    "quotes":0,
+    // 句末 ;校验
+    "semi":0,
+    "no-multi-spaces":0
   }
 }

@@ -4,7 +4,7 @@
         <router-link :to="{path:'/sell'}" >商城</router-link>
      </div>
      <div>
-        <router-link :to="{path:'/shopper'}" >购物袋</router-link>
+        <router-link :to="{path:'/mescrollTest'}" >购物袋</router-link>
      </div>
      <div>
         <router-link :to="{path:'/home'}" >我的</router-link>
@@ -32,8 +32,10 @@
     color:blue;
     font-size:18px;
     text-align:center;
-    width:33%;
-    margin-left:0.3%;
-    background-color:#efef;
+    width:33.1%;
+    background-color:#BADBFB;
+}
+.footer div:not(:first-child){
+    margin-left:0.35%;
 }
 </style>

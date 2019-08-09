@@ -1,11 +1,10 @@
 <template>
-  <div >
+  <div>
     <router-view></router-view>
     <v-footer></v-footer>
   </div>
 </template>
 <script>
-import Search from 'components/search';
 import Footer from 'components/footer';
 export default {
     data(){
@@ -24,7 +23,6 @@ export default {
         });
     },
     components:{
-       'v-search' : Search,
        'v-footer' : Footer
     }
 };

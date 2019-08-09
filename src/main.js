@@ -8,11 +8,13 @@ import 'bootstrap3/dist/css/bootstrap.css';
 import 'bootstrap3/dist/js/bootstrap.js';
 
 Vue.config.productionTip = false;
+// vue-resource 请求接口 不推荐使用   推荐axios
 Vue.use(VueResource);
 Vue.http.options.emulateJSON = true; // 解决vue-resource 跨域问题
-Vue.use(VueRouter);
+
 
 // 只能使用router这个名字
+Vue.use(VueRouter);
 var router = new VueRouter({
     routes // (缩写) 相当于 routes: routes
 });
