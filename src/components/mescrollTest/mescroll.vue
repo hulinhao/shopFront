@@ -71,8 +71,6 @@ export default {
     },
     // 上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
     upCallback (page, mescroll) {
-        console.log("上拉回调......");
-        console.log("当前数据："+ this.dataList.length);
       // 联网请求
       this.$http.get(this.$store.state.api.getPage,{ params:{ pageNum : page.num,pageSize:page.size } }).then((response) => {
         // 请求的列表数据
@@ -80,8 +78,8 @@ export default {
         // 如果是第一页需手动置空列表
         if (page.num === 1) this.dataList = []
         // 把请求到的数据添加到列表
-        // this.dataList = this.dataList.concat(arr)
-        this.dataList = []
+        this.dataList = this.dataList.concat(arr)
+        //this.dataList = []
         // 数据渲染成功后,隐藏下拉刷新的状态
         this.$nextTick(() => {
           mescroll.endSuccess(arr.length)

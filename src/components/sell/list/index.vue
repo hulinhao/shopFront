@@ -1,7 +1,7 @@
 <template>
 <div>
 <!--mescroll滚动区域的基本结构-->
- <mescroll-vue id= "mescroll" :style="topHight" ref="mescroll" :down="mescrollDown" :up="mescrollUp" @init="mescrollInit">
+ <mescroll-vue id= "mescroll" ref="mescroll" :down="mescrollDown" :up="mescrollUp" @init="mescrollInit">
   <!--内容...-->
     <div >
         <div class="goods" v-for = '(goods,idx) in dataList' :key='idx'>
@@ -106,17 +106,6 @@ import MescrollVue from 'mescroll.js/mescroll.vue';
                 mescroll.endErr()
               })
             }
-          },
-          // 模板加载完成之后调用
-          computed:{
-            // 调整商品显示高度
-            topHight:function(){
-                var h = document.getElementById("separateDiv");
-                var c = document.getElementById("mescroll");
-                console.log( h);
-                console.log(c);
-                return "'top':'"+h+"'px'";
-            }
           }
     };
 </script>
@@ -152,7 +141,7 @@ import MescrollVue from 'mescroll.js/mescroll.vue';
   /*通过fixed固定mescroll的高度*/
   .mescroll {
     position: fixed;
-    top: 44px;
+    top: 188px;
     bottom: 0;
     height: auto;
   }

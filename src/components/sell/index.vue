@@ -1,7 +1,7 @@
 <template>
     <div class="sell" id = 'sell'>
        <!-- 这个div用于区分主题和上面 -->
-       <div id = "separateDiv">
+       <div>
          <v-search></v-search>
          <v-hander></v-hander>
          <v-catalogue></v-catalogue>
@@ -30,7 +30,5 @@ export default{
 .footHid{
     height:25px;
 }
-#separateDiv{
-  border:1px solid red;
-}
+
 </style>
