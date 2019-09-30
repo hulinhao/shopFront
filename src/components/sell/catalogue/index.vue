@@ -17,7 +17,7 @@ import $ from 'jquery';
             };
         },
        created() {
-            this.$http.get(this.$store.state.api.catalog).then((response) => {
+            this.$http.post(this.$store.state.api.catalog).then((response) => {
                 this.catalog = $.parseJSON(response.bodyText).catalog;
               });
         },

@@ -89,7 +89,7 @@ import MescrollVue from 'mescroll.js/mescroll.vue';
             // 上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
             upCallback (page, mescroll) {
               // 联网请求
-              this.$http.get(this.$store.state.api.goods,{ params:{ pageNum : page.num,pageSize:page.size } }).then((response) => {
+              this.$http.post(this.$store.state.api.goods,{ params:{ pageNum : page.num,pageSize:page.size } }).then((response) => {
                 // 请求的列表数据
                 let arr = eval('(' + response.bodyText + ')')
                 // 如果是第一页需手动置空列表

@@ -18,8 +18,8 @@ export default {
       }
     },
     created() {
-            this.$http.get(this.$store.state.api.index, { params : { type : 2 } }).then((response) => {
-            this.seller = response.bodyText;
+            this.$http.post(this.$store.state.api.index, { params : { type : 1 } }).then((response) => {
+            console.log(response.bodyText);
         });
     },
     components:{
